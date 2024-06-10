@@ -1,0 +1,63 @@
+<div class="medico-crear-container">
+    <mat-card>
+      <mat-toolbar color="primary">
+        <span>Crear Médico</span>
+      </mat-toolbar>
+      <form #form="ngForm" (ngSubmit)="formSubmit(form)">
+        <mat-form-field appearance="fill">
+          <mat-label>Colegiado</mat-label>
+          <input matInput id="colegiado" name="colegiado" [(ngModel)]="medico.colegiado">
+          <div *ngIf="errores?.colegiado" class="error">{{ errores.colegiado }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput id="nombre_completo" name="nombre_completo" [(ngModel)]="medico.nombre_completo">
+          <div *ngIf="errores?.nombre_completo" class="error">{{ errores.nombre_completo }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Especialidad</mat-label>
+          <input matInput id="especialidad" name="especialidad" [(ngModel)]="medico.especialidad">
+          <div *ngIf="errores?.especialidad" class="error">{{ errores.especialidad }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Registro</mat-label>
+          <input matInput [matDatepicker]="picker" id="fecha_registro" name="fecha_registro" [(ngModel)]="medico.fecha_registro">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <div *ngIf="errores?.fecha_registro" class="error">{{ errores.fecha_registro }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Dirección</mat-label>
+          <input matInput id="direccion" name="direccion" [(ngModel)]="medico.direccion">
+          <div *ngIf="errores?.direccion" class="error">{{ errores.direccion }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Centro Hospitalario</mat-label>
+          <input matInput id="centro_hospitalario" name="centro_hospitalario" [(ngModel)]="medico.centro_hospitalario">
+          <div *ngIf="errores?.centro_hospitalario" class="error">{{ errores.centro_hospitalario }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Edad</mat-label>
+          <input matInput id="edad" name="edad" [(ngModel)]="medico.edad">
+          <div *ngIf="errores?.edad" class="error">{{ errores.edad }}</div>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Observación</mat-label>
+          <input matInput id="observacion" name="observacion" [(ngModel)]="medico.observacion">
+          <div *ngIf="errores?.observacion" class="error">{{ errores.observacion }}</div>
+        </mat-form-field>
+  
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Guardar</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  
